@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System    ;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,9 +9,9 @@ namespace csharp_lib_exception_snmp
 {
     public class Verification
     {
-        public void verify<t>(t temp)
+        public void verify<T>(T temp)
         {
-            var props = typeof(t).GetProperties();
+            var props = typeof(T).GetProperties();
             foreach (var prop in props)
             {
                 if (prop == null) throw new System.ArgumentNullException("value");
@@ -20,32 +20,57 @@ namespace csharp_lib_exception_snmp
     }
     public class ExceptionWrapConfig : Verification
     {
-        public IPEndPoint hostEntry;
+        public IPEndPoint endPoint;
         public string passphrase;
         public int protocolVersion;
 
         // default constructor
         public ExceptionWrapConfig()
         {
-            // default initializations
-            hostEntry.Address = Dns.GetHostAddresses("localhost")[0];
-            hostEntry.Port = 162;
-            passphrase = "public";
-            protocolVersion = 1;
+            // default IPv4 initializations
+            try
+            {
+                endPoint = new IPEndPoint(Dns.GetHostAddresses("localhost")[1], 162);
+                passphrase = "public";
+                protocolVersion = 1;
+            }
+            catch (Exception e)
+            {
+                if (e.Source != null)
+                    Console.WriteLine("Exception source: {0}", e.Source);
+                throw;
+            }
         }
 
         public ExceptionWrapConfig(string pp, int pr)
         {
-            hostEntry.Address = Dns.GetHostAddresses("localhost")[0];
-            hostEntry.Port = 162;
-            passphrase = pp;
-            protocolVersion = pr;
+            try
+            {
+                endPoint = new IPEndPoint(Dns.GetHostAddresses("localhost")[1], 162);
+                passphrase = pp;
+                protocolVersion = pr;
+            }
+            catch (Exception e)
+            {
+                if (e.Source != null)
+                    Console.WriteLine("Exception source: {0}", e.Source);
+                throw;
+            }
         }
         public ExceptionWrapConfig(IPEndPoint he, string pp, int pr)
         {
-            hostEntry = he;
-            passphrase = pp;
-            protocolVersion = pr;
+            try
+            {
+                endPoint = he;
+                passphrase = pp;
+                protocolVersion = pr;
+            }
+            catch (Exception e)
+            {
+                if (e.Source != null)
+                    Console.WriteLine("Exception source: {0}", e.Source);
+                throw;
+            }
             // insert verification here
         }
     }
