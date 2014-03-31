@@ -9,7 +9,7 @@ namespace csharp_lib_exception_snmp
 {
     public class Verification
     {
-        static public void verify<t>(ref t temp)
+        static public void verify<t>(t temp)
         {
             var props = typeof(t).GetProperties();
             foreach (var prop in props)
@@ -24,6 +24,11 @@ namespace csharp_lib_exception_snmp
         public string passphrase;
         public int protocolVersion;
 
+        public ExceptionWrapConfig()
+        {
+            // add default initializations here
+        }
+
         public ExceptionWrapConfig(IPHostEntry he, string pp, int pr)
         {
             hostEntry = he;
@@ -34,8 +39,10 @@ namespace csharp_lib_exception_snmp
     }
     public class ExceptionWrap : ExceptionWrapConfig
     {
-        public ExceptionWrap();
-        public ~ExceptionWrap();
+        public ExceptionWrap()
+        {
+        
+        }
 
         public void queue(string msg)
         {
