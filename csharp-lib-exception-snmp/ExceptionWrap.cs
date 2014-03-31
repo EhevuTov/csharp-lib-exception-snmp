@@ -14,22 +14,34 @@ namespace csharp_lib_exception_snmp
             var props = typeof(t).GetProperties();
             foreach (var prop in props)
             {
-                if (prop == null) throw new System.ArgumentException();
+                if (prop == null) throw new System.ArgumentNullException("value");
             }
         }
     }
     public class ExceptionWrapConfig : Verification
     {
-        public IPHostEntry hostEntry;
+        public IPEndPoint hostEntry;
         public string passphrase;
         public int protocolVersion;
 
+        // default constructor
         public ExceptionWrapConfig()
         {
-            // add default initializations here
+            // default initializations
+            hostEntry.Address = Dns.GetHostAddresses("localhost")[0];
+            hostEntry.Port = 162;
+            passphrase = "public";
+            protocolVersion = 1;
         }
 
-        public ExceptionWrapConfig(IPHostEntry he, string pp, int pr)
+        public ExceptionWrapConfig(string pp, int pr)
+        {
+            hostEntry.Address = Dns.GetHostAddresses("localhost")[0];
+            hostEntry.Port = 162;
+            passphrase = pp;
+            protocolVersion = pr;
+        }
+        public ExceptionWrapConfig(IPEndPoint he, string pp, int pr)
         {
             hostEntry = he;
             passphrase = pp;
