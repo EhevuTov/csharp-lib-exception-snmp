@@ -9,9 +9,9 @@ namespace csharp_lib_exception_snmp
 {
     public class Verification
     {
-        static public virtual void verify<t>(ref t temp)
+        static public void verify<t>(ref t temp)
         {
-            var props = typeof(ExceptionWrapConfig).GetProperties();
+            var props = typeof(t).GetProperties();
             foreach (var prop in props)
             {
                 if (prop == null) throw new System.ArgumentException();
