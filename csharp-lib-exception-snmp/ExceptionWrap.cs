@@ -9,7 +9,7 @@ namespace csharp_lib_exception_snmp
 {
     public class Verification
     {
-        static public void verify<t>(t temp)
+        public void verify<t>(t temp)
         {
             var props = typeof(t).GetProperties();
             foreach (var prop in props)
