@@ -10,17 +10,16 @@ namespace csharp_lib_exception_snmp.Tests
     // arrange
     public class TestVerify
     {
-        public int property1;
-        public double property2;
-        public string property3;
+        public int      property1;
+        public double   property2;
+        public string   property3;
     }
     [TestClass()]
     public class VerificationTests
     {
-
         [TestMethod()]
-        [ExpectedException(typeof(ArgumentException),
-         "A property of null was inappropriately allowed.")]
+        [ExpectedException(typeof(ArgumentNullException),
+         "value")]
         public void verifyTest()
         {
             // arrange
