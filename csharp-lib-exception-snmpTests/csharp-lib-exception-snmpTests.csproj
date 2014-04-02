@@ -35,6 +35,41 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.Unofficial.3.4.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime.Debug">
+      <HintPath>..\packages\Antlr.Unofficial.3.4.1.0\lib\Antlr3.Runtime.Debug.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime.JavaExtensions">
+      <HintPath>..\packages\Antlr.Unofficial.3.4.1.0\lib\Antlr3.Runtime.JavaExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr4.StringTemplate">
+      <HintPath>..\packages\Antlr.Unofficial.3.4.1.0\lib\Antlr4.StringTemplate.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr4.StringTemplate.Visualizer">
+      <HintPath>..\packages\Antlr.Unofficial.3.4.1.0\lib\Antlr4.StringTemplate.Visualizer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Enterprise Library 5.0\Bin\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSnmpLib">
+      <HintPath>..\packages\Lextm.SharpSnmpLib.8.0.0.0\lib\net40\SharpSnmpLib.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSnmpLib.Engine">
+      <HintPath>..\packages\Lextm.SharpSnmpLib.8.0.0.0\lib\net40\SharpSnmpLib.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSnmpLib.Mib">
+      <HintPath>..\packages\Lextm.SharpSnmpLib.8.0.0.0\lib\net40\SharpSnmpLib.Mib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -60,6 +95,13 @@
       <Project>{EF2AA67D-DAA6-4821-AC8F-1C15B776729C}</Project>
       <Name>csharp-lib-exception-snmp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
