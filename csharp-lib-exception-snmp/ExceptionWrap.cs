@@ -1,5 +1,6 @@
 ﻿using System    ;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -23,6 +24,7 @@ namespace csharp_lib_exception_snmp
         private IPEndPoint endPoint;
         private string passphrase;
         private int protocolVersion;
+        private Path configFile;
 
         // default constructor
         public ExceptionWrapConfig()
