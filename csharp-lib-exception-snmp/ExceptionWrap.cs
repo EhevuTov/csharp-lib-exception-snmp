@@ -1,4 +1,4 @@
-﻿using System    ;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,15 +19,17 @@ namespace csharp_lib_exception_snmp
             }
         }
     }
-    public class ExceptionWrapConfig : Verification
+    public class ExceptionWrapConfigAll : Verification{}
+    public class ExceptionWrapConfigSys : Verification { }
+    public class ExceptionWrapConfigSNMP : Verification
     {
         private IPEndPoint endPoint;
         private string passphrase;
         private int protocolVersion;
-        private Path configFile;
+        //private Path configFile;
 
         // default constructor
-        public ExceptionWrapConfig()
+        public ExceptionWrapConfigSNMP()
         {
             // default IPv4 initializations
             try
@@ -44,7 +46,7 @@ namespace csharp_lib_exception_snmp
             }
         }
 
-        public ExceptionWrapConfig(string pp, int pr)
+        public ExceptionWrapConfigSNMP(string pp, int pr)
         {
             try
             {
@@ -59,7 +61,7 @@ namespace csharp_lib_exception_snmp
                 throw;
             }
         }
-        public ExceptionWrapConfig(IPEndPoint he, string pp, int pr)
+        public ExceptionWrapConfigSNMP(IPEndPoint he, string pp, int pr)
         {
             try
             {
@@ -76,12 +78,13 @@ namespace csharp_lib_exception_snmp
             // insert verification here
         }
     }
-    public class ExceptionWrap : ExceptionWrapConfig
+    public class ExceptionWrap
     {
-        public ExceptionWrap()
-        {
-        
-        }
+        public ExceptionWrap(){        }
+
+        public ExceptionWrap(ExceptionWrapConfigSNMP config) {}
+        public ExceptionWrap(ExceptionWrapConfigSys config) {}
+        public ExceptionWrap(ExceptionWrapConfigAll config) {}
 
         public void send()
         {

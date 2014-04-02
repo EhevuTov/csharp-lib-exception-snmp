@@ -13,13 +13,17 @@ namespace csharp_lib_exception_snmp.Tests
         [TestMethod()]
         public void ExceptionWrapTest()
         {
-            Assert.Fail();
+            // arrange
+
+            // act
+            ExceptionWrap e = new ExceptionWrap();
+            // assert
         }
 
         [TestMethod()]
         public void sendTest()
         {
-            Assert.Fail();
+
         }
     }
 }

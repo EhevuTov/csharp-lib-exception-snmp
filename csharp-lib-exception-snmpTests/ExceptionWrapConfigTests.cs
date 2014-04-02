@@ -23,7 +23,7 @@ namespace csharp_lib_exception_snmp.Tests
             // arrange
             IPEndPoint ep = new IPEndPoint(Dns.GetHostAddresses(hn)[1], port);
             // act
-            ExceptionWrapConfig config = new ExceptionWrapConfig();
+            ExceptionWrapConfigSNMP config = new ExceptionWrapConfigSNMP();
             // assert
         }
 
@@ -33,7 +33,7 @@ namespace csharp_lib_exception_snmp.Tests
             // arrange
             IPEndPoint ep = new IPEndPoint(Dns.GetHostAddresses(hn)[1], port);
             // act
-            ExceptionWrapConfig config = new ExceptionWrapConfig(pp,pr);
+            ExceptionWrapConfigSNMP config = new ExceptionWrapConfigSNMP(pp,pr);
             // assert
         }
         [TestMethod()]
@@ -42,7 +42,7 @@ namespace csharp_lib_exception_snmp.Tests
             // arrange
             IPEndPoint ep = new IPEndPoint(Dns.GetHostAddresses(hn)[1], port);
             // act
-            ExceptionWrapConfig config = new ExceptionWrapConfig(ep, pp, pr);
+            ExceptionWrapConfigSNMP config = new ExceptionWrapConfigSNMP(ep, pp, pr);
             // assert
         }
     }
