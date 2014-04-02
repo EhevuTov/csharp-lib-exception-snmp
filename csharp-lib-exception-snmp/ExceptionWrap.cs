@@ -6,6 +6,8 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
+using Lextm.SharpSnmpLib;
+
 namespace csharp_lib_exception_snmp
 {
     public class Verification
@@ -82,7 +84,10 @@ namespace csharp_lib_exception_snmp
     {
         public ExceptionWrap(){        }
 
-        public ExceptionWrap(ExceptionWrapConfigSNMP config) {}
+        public ExceptionWrap(ExceptionWrapConfigSNMP config)
+        {
+
+        }
         public ExceptionWrap(ExceptionWrapConfigSys config) {}
         public ExceptionWrap(ExceptionWrapConfigAll config) {}
 
