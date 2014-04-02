@@ -25,9 +25,6 @@ namespace csharp_lib_exception_snmp.Tests
             // act
             ExceptionWrapConfig config = new ExceptionWrapConfig();
             // assert
-            Assert.AreEqual(config.endPoint, ep);
-            Assert.AreEqual(config.passphrase, pp);
-            Assert.AreEqual(config.protocolVersion, 1);
         }
 
         [TestMethod()]
@@ -38,9 +35,6 @@ namespace csharp_lib_exception_snmp.Tests
             // act
             ExceptionWrapConfig config = new ExceptionWrapConfig(pp,pr);
             // assert
-            Assert.AreEqual(config.endPoint, ep);
-            Assert.AreEqual(config.passphrase, pp);
-            Assert.AreEqual(config.protocolVersion, pr);
         }
         [TestMethod()]
         public void ExceptionWrapConfigTestConstructor3()
@@ -50,9 +44,6 @@ namespace csharp_lib_exception_snmp.Tests
             // act
             ExceptionWrapConfig config = new ExceptionWrapConfig(ep, pp, pr);
             // assert
-            Assert.AreEqual(config.endPoint, ep);
-            Assert.AreEqual(config.passphrase, pp);
-            Assert.AreEqual(config.protocolVersion, pr);
         }
     }
 }

@@ -20,9 +20,9 @@ namespace csharp_lib_exception_snmp
     }
     public class ExceptionWrapConfig : Verification
     {
-        public IPEndPoint endPoint;
-        public string passphrase;
-        public int protocolVersion;
+        private IPEndPoint endPoint;
+        private string passphrase;
+        private int protocolVersion;
 
         // default constructor
         public ExceptionWrapConfig()
@@ -81,7 +81,12 @@ namespace csharp_lib_exception_snmp
         
         }
 
-        public void queue(string msg)
+        public void send()
+        {
+
+        }
+
+        private void queue(string msg)
         {
 
         }
