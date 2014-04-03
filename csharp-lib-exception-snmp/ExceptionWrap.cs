@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Lextm.SharpSnmpLib;
+using Lextm.SharpSnmpLib.Messaging;
 
 namespace csharp_lib_exception_snmp
 {
@@ -93,7 +94,12 @@ namespace csharp_lib_exception_snmp
 
         public void send()
         {
-
+            IPAddress address = IPAddress.Loopback;
+            Messenger.SendTrapV2(0, VersionCode.V2, new IPEndPoint(address, 162),
+                     new OctetString("public"),
+                     new ObjectIdentifier(new uint[] { 1, 3, 6 }),
+                     0,
+                     new List<Variable>());
         }
 
         private void queue(string msg)
